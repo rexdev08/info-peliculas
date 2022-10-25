@@ -1,0 +1,128 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  width: 100%;
+  min-height: 70px;
+  background-color: #121212;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: start;
+  padding: 1rem 2rem;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.header__logo {
+  display: grid;
+  place-items: center;
+}
+.header__btn-menu {
+  display: none;
+  padding: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+}
+.header__menu {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: height 0.3s;
+}
+.header__category {
+  background-color: transparent;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.header__category:hover, .header__category:focus {
+  background-color: #252525;
+}
+
+@media (max-width: 720px) {
+  .header {
+    padding-top: 1rem;
+  }
+  .header__btn-menu {
+    display: block;
+  }
+  .header__menu {
+    width: 100%;
+    flex-flow: column;
+    height: 0;
+    overflow: hidden;
+  }
+  .header__menu--visible {
+    height: 50vh;
+  }
+}
+.movies {
+  margin-top: 100px;
+  width: 85%;
+  min-height: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 185px));
+  gap: 1.5rem;
+  justify-content: center;
+}
+.movies .card {
+  background-color: #121212;
+  border-radius: 0.3rem;
+  text-align: left;
+}
+.movies .card__image {
+  width: 100%;
+  height: 270px;
+  object-fit: fill;
+  object-position: top;
+  border-radius: 0.3rem;
+}
+.movies .card__text-container {
+  display: flex;
+  flex-flow: column;
+  gap: 0.2rem;
+  width: 100%;
+  padding: 1rem;
+}
+.movies .card__rating {
+  width: 100%;
+  text-align: left;
+  color: rgb(218, 218, 218);
+  font-weight: 600;
+}
+.movies .card__rating::before {
+  content: "⭐";
+  font-size: 1rem;
+}
+.movies .card__title {
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 100;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*# sourceMappingURL=style.css.map */
